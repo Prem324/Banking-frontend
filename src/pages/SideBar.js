@@ -22,12 +22,12 @@ function Sidebar() {
         try {
           const token = localStorage.getItem("token");
           const response = await fetch(
-            `http://localhost:8080/getProfileInfoOfUser/${userName}`,
+            `https://banking-backend-785j.onrender.com/getProfileInfoOfUser/${userName}`,
             {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + token
+                Authorization: "Bearer " + token,
               },
             }
           );

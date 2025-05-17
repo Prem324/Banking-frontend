@@ -39,25 +39,28 @@ const BankAccountSummary = () => {
       try {
         const token = localStorage.getItem("token");
         // Fetch account data
-        const accountRes = await fetch(`http://localhost:8080/getAccount/${id}`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + token,
-          },
-        });
+        const accountRes = await fetch(
+          `https://banking-backend-785j.onrender.com/getAccount/${id}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + token,
+            },
+          }
+        );
         const accountData = await accountRes.json();
 
         // Fetch user data (using userName from account)
         let userData = null;
         if (accountData.account && accountData.account.userName) {
           const userRes = await fetch(
-            `http://localhost:8080/getProfileInfoOfUser/${accountData.account.userName}`,
+            `https://banking-backend-785j.onrender.com/getProfileInfoOfUser/${accountData.account.userName}`,
             {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + token,
+                Authorization: "Bearer " + token,
               },
             }
           );

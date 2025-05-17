@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "./SideBar";
 import "./Dashboard.css";
 import Loader from "./Loader";
-import { errorStyle } from "./utils";
+// import { errorStyle } from "./utils";
 
 const Dashboard = () => {
   const [accounts, setAccounts] = useState([]);
@@ -19,13 +19,13 @@ const Dashboard = () => {
           : undefined;
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `http://localhost:8080/getAllAccountsOfUser/${userName}`,
+          `https://banking-backend-785j.onrender.com/getAllAccountsOfUser/${userName}`,
           {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": "Bearer " + token
-            }
+              Authorization: "Bearer " + token,
+            },
           }
         );
         const data = await response.json();
@@ -76,7 +76,9 @@ const Dashboard = () => {
         ) : (
           <div className="content">
             {error && <div className="error">{error}</div>}
-            {accounts.length === 0 && !error && <div>No accounts available.</div>}
+            {accounts.length === 0 && !error && (
+              <div>No accounts available.</div>
+            )}
             {accounts.length > 0 && (
               <div className="accounts">
                 <h1 style={{ textAlign: "center", color: "#3B536F" }}>
@@ -91,9 +93,7 @@ const Dashboard = () => {
                           <p>A/c Type - {account.accountType}</p>
                           <p>
                             Balance:{" "}
-                            <span
-                              style={{ fontSize: "18px", fontWeight: 600 }}
-                            >
+                            <span style={{ fontSize: "18px", fontWeight: 600 }}>
                               ${account.currentBalance.toFixed(2)}
                             </span>
                           </p>

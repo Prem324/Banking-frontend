@@ -93,44 +93,51 @@ const BankAccountForm = () => {
   };
 
   // ... existing code ...
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-  try {
-    const userName = localStorage.getItem("userName")
-      ? JSON.parse(localStorage.getItem("userName"))
-      : undefined;
-    const token = localStorage.getItem("token");
+    try {
+      const userName = localStorage.getItem("userName")
+        ? JSON.parse(localStorage.getItem("userName"))
+        : undefined;
+      const token = localStorage.getItem("token");
 
-    await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
-    const response = await fetch("http://localhost:8080/createAccount", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + token,
-      },
-      body: JSON.stringify({ ...formData, currentBalance: Number(formData.currentBalance), userName }),
-    });
+      const response = await fetch(
+        "https://banking-backend-785j.onrender.com/createAccount",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+          body: JSON.stringify({
+            ...formData,
+            currentBalance: Number(formData.currentBalance),
+            userName,
+          }),
+        }
+      );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (response.status === 201) {
-      setModalMessage(data.message || "Account created successfully!");
+      if (response.status === 201) {
+        setModalMessage(data.message || "Account created successfully!");
+        setModalIsOpen(true);
+        // Optionally use data.account here
+      } else {
+        setModalMessage(data.message || "Failed to create account.");
+        setModalIsOpen(true);
+      }
+    } catch (error) {
+      setModalMessage("Network error, please try again.");
       setModalIsOpen(true);
-      // Optionally use data.account here
-    } else {
-      setModalMessage(data.message || "Failed to create account.");
-      setModalIsOpen(true);
+    } finally {
+      setLoading(false);
     }
-  } catch (error) {
-    setModalMessage("Network error, please try again.");
-    setModalIsOpen(true);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   const closeModal = () => {
     navigate("/Dashboard");

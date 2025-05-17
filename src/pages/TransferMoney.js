@@ -30,12 +30,12 @@ const TransferMoneyScreen = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `http://localhost:8080/getAllAccountsOfUser/${userName}`,
+          `https://banking-backend-785j.onrender.com/getAllAccountsOfUser/${userName}`,
           {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": "Bearer " + token,
+              Authorization: "Bearer " + token,
             },
           }
         );
@@ -100,7 +100,7 @@ const TransferMoneyScreen = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + token,
+            Authorization: "Bearer " + token,
           },
           body: JSON.stringify(transferData),
         }
