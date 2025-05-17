@@ -1,0 +1,37 @@
+.success-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #28a745; /* Green border for success */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 128, 0, 0.1);
+    background-color: #e6ffed; /* Light green background */
+    text-align: center;
+  }
+  
+  .success-title {
+    color: #28a745; /* Green text color */
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .success-message {
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+  }
+  
+  .success-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .success-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  

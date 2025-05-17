@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  max-height: 85vh; /* Full viewport height */
+}
+
+.sidebar {
+  flex: 0 0 20%; /* Sidebar takes 20% of the width */
+  background-color: #ffffff; /* Optional background color */
+}
+
+.dashboard {
+  flex: 0 0 55%; /* Dashboard takes 60% of the width */
+  padding: 20px; /* Optional padding */
+  background-color: #ffffff; /* Optional background color */
+  max-height: 85vh;
+}
+
+.quick-links {
+  flex: 0 0 20%; /* Quick links take 20% of the width */
+  height: fit-content;
+}
+
+.quick-link-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+  width: 250px; /* Adjust width as necessary */
+  margin: 0px auto; /* Center the card */
+  height: fit-content;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  gap: 25px; /* Space between cards */
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1em;
+  overflow-y: scroll;
+  max-height: 75vh;
+}
+
+.card {
+  background-color: #fff; /* Card background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  background-color: #ebf0f6;
+}
+
+.content {
+  width: 100%;
+}
+
+.quick-link {
+  margin-bottom: 10px; /* Space between quick links */
+}
+
+.quick-link button {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.quick-link a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.card-content {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between info and button */
+  align-items: center; /* Center align items vertically */
+}
+
+.info {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 10px;
+  width: 75%;
+  justify-content: space-around;
+}
+
+.view-details-button {
+  width: 100%; /* Make button take full width */
+  padding: 10px; /* Add padding */
+  background-color: #007bff; /* Optional: button color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Optional: rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+}

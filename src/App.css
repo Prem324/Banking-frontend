@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make the container take full height of the viewport */
+}
+
+.main-content {
+  flex: 1; /* Take up the available space between header and footer */
+  padding: 20px; /* Add some padding for the main content */
+  background-color: #f4f4f4; /* Light background for content area */
+}

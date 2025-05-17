@@ -1,0 +1,61 @@
+.page-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  flex:1;
+}
+
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically if needed */
+  width: 100%; /* Make the container full width */
+  max-width: 400px; /* Set a maximum width for better layout */
+  margin: 100px auto; /* Center the container on the page */
+  padding: 20px; /* Add some padding */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visual appeal */
+  background: #f7f7f7; /* Light gray background */
+  border-radius: 8px;
+}
+
+.signin-title {
+  text-align: center; /* Center the title */
+  margin: 20px 0 20px 0;
+}
+
+.input-group {
+  width: 100%; /* Make input groups take full width */
+  margin-bottom: 15px; /* Space between input fields */
+}
+
+.input-label {
+  display: block; /* Ensure labels are on their own line */
+  margin-bottom: 5px; /* Space between label and input */
+}
+
+.input {
+  width: 100%; /* Make inputs take full width */
+  padding: 10px; /* Add some padding inside the inputs */
+  border: 1px solid #ccc; /* Optional: add border */
+  border-radius: 4px; /* Optional: rounded corners */
+}
+
+.signin-button {
+  width: 100%; /* Make button take full width */
+  padding: 10px; /* Add padding */
+  background-color: #007bff; /* Optional: button color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Optional: rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.signin-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+.signin-link {
+  text-align: center; /* Center the link */
+  margin-top: 15px; /* Space above the link */
+}
