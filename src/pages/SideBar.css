@@ -2,108 +2,112 @@
 
 /* Overall dashboard layout */
 .dashboard {
-    display: flex;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #FFFFFF;
-    padding: 20px;
-    box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 400px) {
+  .dashboard {
+    flex-direction: column;
   }
-  
-  /* Sidebar styling */
-  .sidebar {
-    width: 25%;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-right: 20px;
-    border-right: 2px solid #e5e7eb; /* Add right border */
-  }
-  
-  .sidebar h2 {
-    font-size: 1.4em;
-    color: #1f2937;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 5px;
-  }
-  
-  .sidebar p {
-    font-size: 1em;
-    color: #4b5563;
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-  
-  .sidebar p strong {
-    color: #111827;
-  }
-  
-  /* Account info styling */
-  .account-info {
-    width: 75%;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-  }
-  
-  .account-info h2 {
-    font-size: 1.4em;
-    color: #1f2937;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 5px;
-  }
-  
-  /* Individual account styling */
-  .account {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 15px;
-    margin-bottom: 15px;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .account p {
-    font-size: 1em;
-    color: #4b5563;
-    margin: 8px 0;
-  }
-  
-  .account p strong {
-    color: #111827;
-  }
-  
-  .account:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  hr {
-    border: none;
-    height: 1px;
-    background-color: #e5e7eb;
-    margin: 10px 0;
-  }
+}
 
-  .account-info-item {
-    display: flex; /* Use flexbox for key-value alignment */
-    justify-content: space-around; /* Space between key and value */
-    margin: 15px 0; /* Spacing between items */
-  }
-  
-  .account-info-key {
-    color: #888; /* Gray color for keys */
-    width: 150px; /* Fixed width for keys for alignment */
-  }
-  
-  .account-info-value {
-    flex-grow: 1; /* Allow value to take remaining space */
-    color: #222222; /* Dark color for values */
-    font-weight: 500;
-  }
-  
+/* Sidebar styling */
+.sidebar {
+  width: 25%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  border-right: 2px solid #e5e7eb; /* Add right border */
+}
+
+.sidebar h2 {
+  font-size: 1.4em;
+  color: #1f2937;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 5px;
+}
+
+.sidebar p {
+  font-size: 1em;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.sidebar p strong {
+  color: #111827;
+}
+
+/* Account info styling */
+.account-info {
+  width: 75%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.account-info h2 {
+  font-size: 1.4em;
+  color: #1f2937;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 5px;
+}
+
+/* Individual account styling */
+.account {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.account p {
+  font-size: 1em;
+  color: #4b5563;
+  margin: 8px 0;
+}
+
+.account p strong {
+  color: #111827;
+}
+
+.account:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 10px 0;
+}
+
+.account-info-item {
+  display: flex; /* Use flexbox for key-value alignment */
+  justify-content: space-around; /* Space between key and value */
+  margin: 15px 0; /* Spacing between items */
+}
+
+.account-info-key {
+  color: #888; /* Gray color for keys */
+  width: 150px; /* Fixed width for keys for alignment */
+}
+
+.account-info-value {
+  flex-grow: 1; /* Allow value to take remaining space */
+  color: #222222; /* Dark color for values */
+  font-weight: 500;
+}

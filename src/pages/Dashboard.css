@@ -3,6 +3,15 @@
   max-height: 85vh; /* Full viewport height */
 }
 
+@media screen and (min-width: 400px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+}
+
 .sidebar {
   flex: 0 0 20%; /* Sidebar takes 20% of the width */
   background-color: #ffffff; /* Optional background color */
