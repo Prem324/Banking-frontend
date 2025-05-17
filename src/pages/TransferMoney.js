@@ -95,7 +95,7 @@ const TransferMoneyScreen = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:8080/api/transfer/sendMoney",
+        "https://banking-backend-785j.onrender.com/api/transfer/sendMoney",
         {
           method: "POST",
           headers: {
